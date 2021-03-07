@@ -1,0 +1,17 @@
+recursive subroutine fun(fact, n)
+integer, intent (in out) :: fact, n
+fact = fact * n
+n = n - 1
+if (n>0) then
+call fun(fact, n)
+end if
+write (*,*) fact
+end subroutine
+
+program main
+integer :: fact = 1
+integer :: n = 5
+
+call fun(fact, n)
+
+end program

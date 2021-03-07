@@ -1,0 +1,19 @@
+program main
+integer, dimension(0:4):: mas = (/3, 2, 5, 1, 4/)
+integer:: i = 0, j = 1, tmp
+do while(i < 5)
+j = i + 1
+do while(j < 5)
+if(mas(i) < mas(j)) then
+tmp = mas(i)
+mas(i) = mas(j)
+mas(j) = tmp
+write(*, *) i, j
+end if
+j = j + 1
+end do
+i = i + 1
+end do
+write(*, *) mas(0), mas(1), mas(2), mas(3), mas(4)
+
+end
